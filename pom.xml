@@ -177,7 +177,7 @@
           <execution><goals><goal>java</goal></goals></execution>
         </executions>
         <configuration>
-          <mainClass>com.dovesquare.login_prototype.App</mainClass>
+          <mainClass>com.dovesquare.WebServer</mainClass>
         </configuration>
       </plugin>
     </plugins>
