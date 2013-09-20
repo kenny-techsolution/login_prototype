@@ -10,7 +10,7 @@
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jetty.version>7.2.0.v20101020</jetty.version>
+    <jetty.version>8.1.5.v20120716</jetty.version>
     <jetty.jsp.version>8.1.4.v20120524</jetty.jsp.version>
     <spring.version>3.0.5.RELEASE</spring.version>
 	<spring-security.version>3.0.5.RELEASE</spring-security.version>
@@ -100,21 +100,7 @@
 	<!-- ======================================= -->
 	<!-- Barebones Spring MVC: Server Validation -->
 	<!-- ======================================= -->
-	<dependency>
-		<groupId>javax.validation</groupId>
-		<artifactId>validation-api</artifactId>
-		<version>1.0.0.GA</version>
-	</dependency>
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-validator</artifactId>
-		<version>4.0.2.GA</version>
-	</dependency>
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>slf4j-log4j12</artifactId>
-		<version>1.5.6</version>
-	</dependency>
+
 	<!-- ========================================== -->
 	<!-- Barebones Spring MVC: Database Integration -->
 	<!-- ========================================== -->

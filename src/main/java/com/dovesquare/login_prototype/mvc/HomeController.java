@@ -11,7 +11,7 @@ public class HomeController {
 	
 	@RequestMapping({"/", "/home"})
 	public String showHomepage(Map<String, Object> model) {
-		model.put("random_number", (Object) Math.random());
+		model.put("randomNumbers", (Object) Math.random());
 		System.out.println("it works!");
 		System.out.println((Object) Math.random());
 		return "home";
