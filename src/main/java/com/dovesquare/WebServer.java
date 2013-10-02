@@ -23,6 +23,7 @@ public class WebServer
         context.setParentLoaderPriority(true);
  
         server.setHandler(context);
+        
  
         server.start();
         server.join();
