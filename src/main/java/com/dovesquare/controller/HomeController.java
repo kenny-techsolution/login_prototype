@@ -1,4 +1,4 @@
-package com.dovesquare.login_prototype.mvc;
+package com.dovesquare.controller;
 
 import java.util.Map;
 

@@ -1,3 +1,5 @@
+//TODO: can we remove this, and use User class that is in the domain package instead?
+//we should remove this package.
 package com.dovesquare.login_prototype;
 
 import javax.persistence.Entity;
