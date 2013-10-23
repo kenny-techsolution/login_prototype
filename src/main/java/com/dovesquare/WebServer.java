@@ -24,7 +24,6 @@ public class WebServer
  
         server.setHandler(context);
         
- 
         server.start();
         server.join();
     }

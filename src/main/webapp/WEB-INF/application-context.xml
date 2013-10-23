@@ -61,4 +61,11 @@
 	</bean>
 
 
+	<bean id="deployProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
+        p:location="/WEB-INF/spring.properties" />
+    <!-- Imports Spring Social configuration -->
+	<import resource="spring-social.xml"/>
+	
+	<!-- <import resource="spring-data.xml"/> -->
+	
 </beans>
