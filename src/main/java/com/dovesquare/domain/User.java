@@ -6,75 +6,72 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class User implements Serializable {
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  private Long id;
+	private Long id;
 
-  @Size(min=6, max=20,
-          message="The password must be at least 6 characters long.")
-  private String password;
+	@Size(min = 6, max = 20, message = "The password must be at least 6 characters long.")
+	private String password;
 
-  @Size(min=3, max=50, message=
-      "Your full name must be between 3 and 50 characters long.")
-  private String fullName;
+	@Size(min = 3, max = 50, message = "Your full name must be between 3 and 50 characters long.")
+	private String fullName;
 
-  @Pattern(regexp="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", 
-          message="Invalid email address.")
-  private String email;
-  
-  private String job;
-  
-  private boolean updateByEmail;
-  
-//  public User() {
-//	  this.id = new Long(123);
-//	  this.password = "test";
-//	  this.fullName = "kenny chung";
-//      this.job = "developer";
-//	  this.email = "yoyocicada@gmail.com";
-//  }
-  
-  public Long getId() {
-    return id;
-  }
+	@Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", message = "Invalid email address.")
+	private String email;
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+	private String job;
 
-  public String getPassword() {
-    return this.password;
-  }
+	private boolean updateByEmail;
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+	// public User() {
+	// this.id = new Long(123);
+	// this.password = "test";
+	// this.fullName = "kenny chung";
+	// this.job = "developer";
+	// this.email = "yoyocicada@gmail.com";
+	// }
 
-  public void setFullName(String fullName) {
-    this.fullName = fullName;
-  }
+	public Long getId() {
+		return id;
+	}
 
-  public String getFullName() {
-    return fullName;
-  }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-  public void setJob(String job) {
-    this.job = job;
-  }
+	public String getPassword() {
+		return this.password;
+	}
 
-  public String getJob() {
-    return job;
-  }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-  public void setEmail(String email) {
-	    this.email = email;
-	  }
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 
-	  public String getEmail() {
-	    return email;
-	  }
-  
-  public void setUpdateByEmail(boolean updateByEmail) {
-    this.updateByEmail = updateByEmail;
-  }
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setJob(String job) {
+		this.job = job;
+	}
+
+	public String getJob() {
+		return job;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setUpdateByEmail(boolean updateByEmail) {
+		this.updateByEmail = updateByEmail;
+	}
 }

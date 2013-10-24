@@ -3,7 +3,6 @@ package com.dovesquare.controller;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +13,6 @@ import com.dovesquare.domain.User;
 @Controller
 @RequestMapping
 public class AccessController {
-
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@Valid User user, BindingResult bindingResult)
@@ -30,4 +28,5 @@ public class AccessController {
 
 		return "login";
 	}
+
 }

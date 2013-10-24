@@ -9,6 +9,6 @@ import com.dovesquare.login_prototype.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-    List<Customer> findByLastName(String lastName);
+	List<Customer> findByLastName(String lastName);
 
 }
