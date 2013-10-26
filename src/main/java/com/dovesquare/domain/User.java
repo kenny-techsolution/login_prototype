@@ -2,38 +2,59 @@ package com.dovesquare.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.validator.constraints.Range;
 
-public class User implements Serializable {
+@Entity(name="user")
+public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
+	
+	@Size(min = 3, max = 50, message = "Your full name must be between 3 and 50 characters long.")
+	@Column(unique=true)
+	private String username;
+	
 	@Size(min = 6, max = 20, message = "The password must be at least 6 characters long.")
 	@Range(min = 1, max = 150)
 	private String password;
-
-	@Size(min = 3, max = 50, message = "Your full name must be between 3 and 50 characters long.")
-	private String fullName;
-
+	
 	@Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", message = "Invalid email address.")
 	private String email;
+	
+	@JsonManagedReference
+	@OneToOne(mappedBy="user", cascade={CascadeType.ALL})
+	private Role role;
 
-	private String job;
+	public User() {}
+	
+	public User(String username, String password, String firstName, String lastName, Role role) {
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+	
+	public User(String username, String firstName, String lastName, Role role) {
+		this.username = username;
+		this.role = role;
+	}
 
-	private boolean updateByEmail;
-
-	// public User() {
-	// this.id = new Long(123);
-	// this.password = "test";
-	// this.fullName = "kenny chung";
-	// this.job = "developer";
-	// this.email = "yoyocicada@gmail.com";
-	// }
-
+	public User(String username) {
+		this.username = username;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -42,39 +63,36 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public String getPassword() {
-		return this.password;
+		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public Role getRole() {
+		return role;
 	}
 
-	public String getFullName() {
-		return fullName;
+	public void setRole(Role role) {
+		this.role = role;
 	}
-
-	public void setJob(String job) {
-		this.job = job;
-	}
-
-	public String getJob() {
-		return job;
+	
+	public String getEmail() {
+		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setUpdateByEmail(boolean updateByEmail) {
-		this.updateByEmail = updateByEmail;
-	}
 }

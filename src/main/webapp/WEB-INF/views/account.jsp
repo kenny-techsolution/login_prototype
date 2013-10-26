@@ -10,18 +10,13 @@
 			<legend>Profile</legend>
 			<div>
 				<label for="user_full_name">Full Name:</label>
-				<sf:input path="fullName" size="15" id="user_full_name"/>
-				<sf:errors path="fullName"/>
+				<sf:input path="username" size="15" id="user_full_name"/>
+				<sf:errors path="username"/>
 			</div>
 			<div>
 				<label for="user_email">Email:</label>
 				<sf:input path="email" size="30" id="user_email"/>
 				<sf:errors path="email"/>
-			</div>
-			<div>
-				<label for="user_job">Job:</label>
-				<sf:input path="job" size="30" id="user_job"/>
-				<sf:errors path="job"/>
 			</div>
 		    <input type="submit" value="Save account">	
 		</fieldset>
@@ -30,5 +25,12 @@
 		<h1>Authentication</h1>
 		<div></div>
 	</div>
+	<form method="POST" action="/signin/facebook/">
+	   <input type="submit" value="signin">
+	</form>
+	<form method="POST" action="/connect/facebook/">
+       <input type="submit" value="connect">
+    </form>
+    <a href="/connect">connect</a>
 </body>
 </html>

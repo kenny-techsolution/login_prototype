@@ -18,7 +18,7 @@
 			<list>
 				<bean class="org.springframework.social.facebook.connect.FacebookConnectionFactory">
 					<constructor-arg value="222082494619002" />
-					<constructor-arg value="0cf26afa199d35f9092333cd42541239" />				
+					<constructor-arg value="0cf26afa199d35f9092333cd42541239" />
 				</bean>
 			</list>
 		</property>
@@ -27,25 +27,16 @@
 	<bean id="textEncryptor" class="org.springframework.security.crypto.encrypt.Encryptors" 
 		factory-method="noOpText" />
 	
-<!-- 	<bean id="usersConnectionRepository" class="org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository"> -->
-<!-- 	    <constructor-arg ref="dataSource" /> -->
-<!-- 	    <constructor-arg ref="connectionFactoryLocator" /> -->
-<!-- 	    <constructor-arg ref="textEncryptor" /> -->
-<!-- 	</bean> -->
+	<bean id="usersConnectionRepository" class="org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository">
+	    <constructor-arg ref="dataSourceH2" />
+	    <constructor-arg ref="connectionFactoryLocator" />
+	    <constructor-arg ref="textEncryptor" />
+	</bean>
 	
-<!-- 	<bean id="connectionRepository" factory-method="createConnectionRepository"  -->
-<!-- 			factory-bean="usersConnectionRepository" scope="request"> -->
-<!-- 	    <constructor-arg value="#{request.userPrincipal.name}" /> -->
-<!-- 	    <aop:scoped-proxy proxy-target-class="false"/> -->
-<!-- 	</bean> -->
+	<bean id="connectionRepository" factory-method="createConnectionRepository" 
+			factory-bean="usersConnectionRepository" scope="request">
+	    <constructor-arg value="#{request.userPrincipal.name}" />
+	    <aop:scoped-proxy proxy-target-class="false"/>
+	</bean>
 	
-<!-- 	<bean class="org.springframework.social.connect.web.ConnectController" -->
-<!-- 		p:applicationUrl="${application.url}"> -->
-<!-- 		<constructor-arg ref="connectionFactoryLocator" /> -->
-<!-- 		<constructor-arg ref="connectionRepository" />	  -->
-<!-- 	</bean> -->
-		
-<!-- 	<bean class="org.springframework.social.connect.signin.web.ProviderSignInController"> -->
-    	 
-<!-- 	</bean>	 -->
 </beans>
