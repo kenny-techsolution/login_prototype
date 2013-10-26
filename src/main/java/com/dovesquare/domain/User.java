@@ -13,7 +13,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.codehaus.jackson.annotate.JsonManagedReference;
-import org.hibernate.validator.constraints.Range;
 
 @Entity(name="user")
 public class User implements Serializable{
@@ -28,7 +27,6 @@ public class User implements Serializable{
 	private String username;
 	
 	@Size(min = 6, max = 20, message = "The password must be at least 6 characters long.")
-	@Range(min = 1, max = 150)
 	private String password;
 	
 	@Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", message = "Invalid email address.")
