@@ -1,0 +1,82 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.5
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jan 27, 2012 at 06:50 AM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `spring_social_tutorial`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role`
+--
+
+CREATE TABLE IF NOT EXISTS `role` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `role` int(11) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK3580769128426C` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `role`
+--
+
+INSERT INTO `role` (`id`, `role`, `user_id`) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 2, 5),
+(6, 1, 6),
+(7, 2, 7),
+(8, 1, 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `password` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `password`, `username`) VALUES
+(1, '21232f297a57a5a743894a0e4a801fc3', 'john'),
+(2, 'ee11cbb19052e40b07aac0ca060c23ee', 'jane'),
+(3, 'xdhhjkd', 'mike'),
+(4, 'zvksdfm', 'alice'),
+(5, 'xmnogpd', 'nancy'),
+(6, 'mvbnko', 'jeff'),
+(7, 'mnhtiep', 'betty'),
+(8, 'trrtyur', 'johnny');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `role`
+--
+ALTER TABLE `role`
+  ADD CONSTRAINT `FK3580769128426C` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);

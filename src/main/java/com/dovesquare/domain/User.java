@@ -38,13 +38,13 @@ public class User implements Serializable{
 
 	public User() {}
 	
-	public User(String username, String password, String firstName, String lastName, Role role) {
+	public User(String username, String password, Role role) {
 		this.username = username;
 		this.password = password;
 		this.role = role;
 	}
 	
-	public User(String username, String firstName, String lastName, Role role) {
+	public User(String username, Role role) {
 		this.username = username;
 		this.role = role;
 	}

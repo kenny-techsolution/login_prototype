@@ -57,13 +57,14 @@
 
     <jdbc:initialize-database data-source="dataSourceH2">
       <jdbc:script location="classpath*:META-INF/create-connection-table.sql"/>
+      <jdbc:script location="classpath*:META-INF/login-prototype.sql"/>
     </jdbc:initialize-database>
 
 	<bean id="dataSourceH2"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.h2.Driver" />
 		<property name="url"
-			value="jdbc:h2:mem:db;DB_CLOSE_DELAY=-1" />
+			value="jdbc:h2:~/test;DB_CLOSE_DELAY=-1" />
 		<property name="username" value="sa" />
 		<property name="password" value="" />
 	</bean>
