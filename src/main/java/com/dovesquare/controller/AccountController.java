@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dovesquare.domain.Role;
 import com.dovesquare.domain.User;
 import com.dovesquare.service.UserService;
 @Controller
@@ -21,10 +22,10 @@ public class AccountController {
 
 	@RequestMapping("/account")
 	public String viewAccount(Model model) {
-		User a = new User();
-		a.setUsername("kennychung");
+		Role b = new Role(1);
+		User a = new User("kennychung","kenny100", b);
 		a.setEmail("yoyocicada@gmail.com");
-		a.setPassword("kenny100");
+
 		userService.create(a);
 		model.addAttribute(a);
 		return "account";
