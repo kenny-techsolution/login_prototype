@@ -55,5 +55,11 @@
         <constructor-arg value="#{request.userPrincipal.name}" />
         <aop:scoped-proxy proxy-target-class="false"/>
     </bean>
-  
+    <bean class="org.springframework.social.connect.web.ConnectController"
+        p:applicationUrl="${application.url}"/>
+        
+    <bean class="org.springframework.social.connect.signin.web.ProviderSignInController">
+    <!-- relies on by-type autowiring for the constructor-args -->    
+    <property name="applicationUrl" value="${application.url}" />
+</bean>    
 </beans>

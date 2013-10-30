@@ -68,6 +68,6 @@
 		<property name="username" value="sa" />
 		<property name="password" value="" />
 	</bean>
-    <import resource="spring-social.xml"/>
+    <!-- <import resource="spring-social.xml"/> -->
     <import resource="spring-security.xml"/>
 </beans>
