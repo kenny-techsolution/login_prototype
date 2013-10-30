@@ -18,10 +18,10 @@
   
     <bean class="com.dovesquare.service.SpringSecuritySigninAdapter"></bean>
     <bean class="org.springframework.social.connect.web.ProviderSignInController">
-             <property name="applicationUrl" value="http://localhost:8080/" />
+             <property name="applicationUrl" value="http://localhost:8080" />
     </bean>
     <bean class="org.springframework.social.connect.web.ConnectController"
-        p:applicationUrl="http://localhost:8080/">
+        p:applicationUrl="http://localhost:8080">
         <constructor-arg ref="connectionFactoryLocator" />
         <constructor-arg ref="connectionRepository" />
     </bean>
