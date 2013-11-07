@@ -1,3 +1,16 @@
+CREATE TABLE IF NOT EXISTS `Account` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `userid` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userid` (`userid`)
+);
+
+INSERT INTO `Account` (`id`, `userid`,`password`, `email`) VALUES
+(1, 'june', 'aaa123', 'june@hotmail.com'),
+(2, 'kenny', 'aaa123', 'kenny@hotmail.com');
+
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(20) NOT NULL AUTO_INCREMENT,
   `password` varchar(255) DEFAULT NULL,

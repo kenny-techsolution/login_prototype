@@ -26,12 +26,11 @@
 		<intercept-url pattern="/fb/post" access="hasRole('ROLE_USER')"/>
 		<intercept-url pattern="/tw/profile" access="hasRole('ROLE_USER')"/>
 		<intercept-url pattern="/tw/post" access="hasRole('ROLE_USER')"/>
-		
+		<form-login login-page="/home" default-target-url="/"
+			authentication-failure-url="/login" />
 		<form-login/>
         <http-basic/>
-        <!--  login-page="/login" 
-            authentication-failure-url="/login/failure" 
-            default-target-url="/"/>-->
+        
 		
 		<access-denied-handler error-page="/denied"/>
 		<logout/>

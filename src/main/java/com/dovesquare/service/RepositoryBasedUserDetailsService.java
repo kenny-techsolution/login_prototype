@@ -28,7 +28,6 @@ public class RepositoryBasedUserDetailsService implements UserDetailsService {
 	 * retrieved from the database and then mapped to a {@link UserDetails}
 	 * object.
 	 */
-	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		try {
 			com.dovesquare.domain.User domainUser = userRepository.findByUsername(username);
