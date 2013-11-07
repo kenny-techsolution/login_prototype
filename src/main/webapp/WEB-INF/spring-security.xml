@@ -11,7 +11,6 @@
     http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 
-<<<<<<< HEAD
 	<http pattern="/resources" security="none" />
 	
 	<http auto-config="true"  use-expressions="true">
@@ -34,9 +33,6 @@
 
 		<access-denied-handler error-page="/denied"/>
 		<logout/>
-		<!-- <logout invalidate-session="true" 
-            logout-success-url="/logout/success" 
-            logout-url="/logout"/> -->
   </http>
 
   <authentication-manager>
