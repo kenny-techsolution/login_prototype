@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div align="center">
-		<sf:form method="POST" modelAttribute="user" action="/login">
+		<sf:form method="POST" modelAttribute="user" action="/j_spring_security_check">
 			<fieldset>
 				<legend>Welcome</legend>
 				<div>

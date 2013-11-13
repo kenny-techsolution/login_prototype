@@ -30,27 +30,6 @@ public class AccessController {
         return "login";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@Valid User user, Model model,
-            BindingResult bindingResult) throws BindException {
-        String username = user.getUsername();
-        String password = user.getPassword();
-        User dbUser = userService.findUserByUsername(username);
-        System.out.println(username);
-        System.out.println(password);
-        if (dbUser.getPassword().equals(user.getPassword())) {
-            System.out.println("success");
-            Role b = new Role(1);
-            User TempUser = new User("kennychung", "kenny100", b);
-            TempUser.setEmail("yoyocicada@gmail.com");
-
-            model.addAttribute(user);
-            return "account";
-        }
-
-        return "login";
-    }
-
     @RequestMapping("/login/failure")
     public String loginFailure(ModelMap model) {
         model.addAttribute("status", "login.failure");
@@ -77,8 +56,8 @@ public class AccessController {
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String signup(@Valid User user, Model model,
-            BindingResult bindingResult) throws BindException {
+    public String signup(@Valid User user, BindingResult bindingResult)
+            throws BindException {
 
         if (bindingResult.hasErrors()) {
             System.out.println("has error");
@@ -87,10 +66,11 @@ public class AccessController {
 
         // String username = user.getUsername();
         // String password = user.getPassword();
-
+        Role myRole = new Role(1);
+        user.setRole(myRole);
         if (userService.create(user)) {
-            return "signup";
+            return "account";
         }
-        return "account";
+        return "signup";
     }
 }

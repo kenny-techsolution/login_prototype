@@ -27,7 +27,7 @@ public class AccountController {
         User a = new User("kennychung", "kenny100", b);
         a.setEmail("yoyocicada@gmail.com");
 
-        userService.create(a);
+        // userService.create(a);
         model.addAttribute(a);
         return "account";
     }

@@ -26,10 +26,10 @@
 		<div></div>
 	</div>
 	<form method="POST" action="/signin/facebook/">
-	   <input type="submit" value="signin">
+	   <input type="submit" value="Facebook signin">
 	</form>
 	<form method="POST" action="/connect/facebook/">
-       <input type="submit" value="connect">
+       <input type="submit" value="Facebook connect">
     </form>
     <a href="/connect">connect</a>
     <a href="/logout">Logout</a>

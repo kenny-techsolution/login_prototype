@@ -11,7 +11,7 @@
     http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 
--
+
   <http pattern="/resources" security="none" />
 
   <http auto-config="true"  use-expressions="true">
@@ -27,7 +27,7 @@
     <intercept-url pattern="/fb/post" access="hasRole('ROLE_USER')"/>
     <intercept-url pattern="/tw/profile" access="hasRole('ROLE_USER')"/>
     <intercept-url pattern="/tw/post" access="hasRole('ROLE_USER')"/>
-    <form-login login-page="/login"
+    <form-login
        authentication-failure-url="/login/failure"
        default-target-url="/"/>
 
@@ -36,7 +36,7 @@
     <logout invalidate-session="true"
         logout-success-url="/logout/success"
         logout-url="/logout"/>
--
+
   </http>
 
   <authentication-manager>
