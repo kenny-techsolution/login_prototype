@@ -8,13 +8,13 @@
 </head>
 <body>
 	<div align="center">
-		<sf:form method="POST" modelAttribute="account" action="/login">
+		<sf:form method="POST" modelAttribute="user" action="/login">
 			<fieldset>
 				<legend>Welcome</legend>
 				<div>
-					<label for="userid">Login Id:</label>
-					<sf:input path="userid" size="30" id="user_email" />
-					<sf:errors path="userid" />
+					<label for="username">Login Id:</label>
+					<sf:input path="username" size="30" id="user_email" />
+					<sf:errors path="username" />
 				</div>
 				<div>
 					<label for="password">Password:</label>
@@ -24,6 +24,8 @@
 				<input type="submit" value="Login">
 			</fieldset>
 		</sf:form>
+		<p>"${status}"</p>
+		<a href="/signup">Sign Up</a>
 	</div>
 </body>
 </html>

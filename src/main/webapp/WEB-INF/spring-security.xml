@@ -11,32 +11,30 @@
     http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 
-<<<<<<< HEAD
-	<http pattern="/resources" security="none" />
-	
-	<http auto-config="true"  use-expressions="true">
-		<intercept-url pattern="/" access="hasRole('ROLE_USER')"/>
-		<intercept-url pattern="/login" access="permitAll"/>
-		<intercept-url pattern="/signup" access="permitAll"/>
-		<intercept-url pattern="/logout" access="permitAll"/>
-		<intercept-url pattern="/error" access="permitAll"/>
-		<intercept-url pattern="/denied" access="hasRole('ROLE_USER')"/>
-		<intercept-url pattern="/welcome" access="hasRole('ROLE_USER')"/>
-		<intercept-url pattern="/users" access="hasRole('ROLE_ADMIN')"/>
-		<intercept-url pattern="/fb/profile" access="hasRole('ROLE_USER')"/>
-		<intercept-url pattern="/fb/post" access="hasRole('ROLE_USER')"/>
-		<intercept-url pattern="/tw/profile" access="hasRole('ROLE_USER')"/>
-		<intercept-url pattern="/tw/post" access="hasRole('ROLE_USER')"/>
-		<form-login login-page="/home" default-target-url="/"
-			authentication-failure-url="/login" />
-		<form-login/>
-        <http-basic/>
+  <http pattern="/resources" security="none" />
 
-		<access-denied-handler error-page="/denied"/>
-		<logout/>
-		<!-- <logout invalidate-session="true" 
-            logout-success-url="/logout/success" 
-            logout-url="/logout"/> -->
+  <http auto-config="true"  use-expressions="true">
+    <intercept-url pattern="/" access="hasRole('ROLE_USER')"/>
+    <intercept-url pattern="/login" access="permitAll"/>
+    <intercept-url pattern="/signup" access="permitAll"/>
+    <intercept-url pattern="/logout" access="permitAll"/>
+    <intercept-url pattern="/error" access="permitAll"/>
+    <intercept-url pattern="/denied" access="hasRole('ROLE_USER')"/>
+    <intercept-url pattern="/welcome" access="hasRole('ROLE_USER')"/>
+    <intercept-url pattern="/users" access="hasRole('ROLE_ADMIN')"/>
+    <intercept-url pattern="/fb/profile" access="hasRole('ROLE_USER')"/>
+    <intercept-url pattern="/fb/post" access="hasRole('ROLE_USER')"/>
+    <intercept-url pattern="/tw/profile" access="hasRole('ROLE_USER')"/>
+    <intercept-url pattern="/tw/post" access="hasRole('ROLE_USER')"/>
+    <form-login login-page="/login"
+       authentication-failure-url="/login/failure"
+       default-target-url="/"/>
+
+    <access-denied-handler error-page="/denied"/>
+
+    <logout invalidate-session="true"
+        logout-success-url="/logout/success"
+        logout-url="/logout"/>
   </http>
 
   <authentication-manager>

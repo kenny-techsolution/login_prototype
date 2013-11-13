@@ -32,5 +32,6 @@
        <input type="submit" value="connect">
     </form>
     <a href="/connect">connect</a>
+    <a href="/logout">Logout</a>
 </body>
 </html>
