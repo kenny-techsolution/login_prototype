@@ -11,6 +11,7 @@
     http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 
+-
   <http pattern="/resources" security="none" />
 
   <http auto-config="true"  use-expressions="true">
@@ -35,6 +36,7 @@
     <logout invalidate-session="true"
         logout-success-url="/logout/success"
         logout-url="/logout"/>
+-
   </http>
 
   <authentication-manager>
