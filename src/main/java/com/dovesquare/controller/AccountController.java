@@ -21,6 +21,8 @@ public class AccountController {
     @Autowired
     private UserService userService;
 
+    // need to figure out how to get forwarded here with the current principle
+    // user.
     @RequestMapping({ "/", "/account" })
     public String viewAccount(Model model) {
         Role b = new Role(1);
@@ -46,4 +48,5 @@ public class AccountController {
 
         return "account";
     }
+
 }
