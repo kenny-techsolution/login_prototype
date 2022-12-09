@@ -12,7 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jetty.version>8.1.5.v20120716</jetty.version>
     <jetty.jsp.version>8.1.4.v20120524</jetty.jsp.version>
-    <spring.version>3.1.4.RELEASE</spring.version>
+    <spring.version>6.0.0</spring.version>
     <spring-social.version>1.0.3.RELEASE</spring-social.version>
     <spring-social-facebook.version>1.0.3.RELEASE</spring-social-facebook.version>
     <spring-data-jpa.version>1.4.1.RELEASE</spring-data-jpa.version>
